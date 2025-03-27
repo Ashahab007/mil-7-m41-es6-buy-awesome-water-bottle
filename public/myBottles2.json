@@ -1,0 +1,52 @@
+[
+  {
+    "id": "WB001",
+    "lifespan": 5,
+    "price": 19.99,
+    "color": "Blue",
+    "wt": 0.35,
+    "hotcold_support": "Both",
+    "brand": "HydroFlask",
+    "image_url": "https://images.unsplash.com/photo-1619021054101-01d1d0e48cb3?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "WB002",
+    "lifespan": 3,
+    "price": 12.99,
+    "color": "Red",
+    "wt": 0.4,
+    "hotcold_support": "Cold",
+    "brand": "Contigo",
+    "image_url": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "WB003",
+    "lifespan": 4,
+    "price": 22.5,
+    "color": "Black",
+    "wt": 0.45,
+    "hotcold_support": "Hot",
+    "brand": "S'well",
+    "image_url": "https://plus.unsplash.com/premium_photo-1705969351341-f34f843d7a32?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "WB004",
+    "lifespan": 6,
+    "price": 15.75,
+    "color": "Green",
+    "wt": 0.38,
+    "hotcold_support": "Both",
+    "brand": "CamelBak",
+    "image_url": "https://cdn.pixabay.com/photo/2011/03/25/08/27/liquor-5884_1280.jpg"
+  },
+  {
+    "id": "WB005",
+    "lifespan": 2,
+    "price": 10.99,
+    "color": "Pink",
+    "wt": 0.3,
+    "hotcold_support": "Cold",
+    "brand": "Nalgene",
+    "image_url": "https://images.unsplash.com/photo-1559839914-17aae19cec71?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]
