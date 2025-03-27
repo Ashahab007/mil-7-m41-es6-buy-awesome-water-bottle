@@ -8,17 +8,22 @@ const Bottles = ({ bottlePromise }) => {
   console.log(bottle);
   const handleAddToCart = (bottle) => {
     console.log("Bottle added", bottle);
+    const updateCart = [...cart, bottle];
+    setCart(updateCart);
   };
 
   return (
-    <div className="bottles-container">
-      {bottle.map((bottle) => (
-        <Bottle
-          bottle={bottle}
-          key={bottle.id}
-          handleAddToCart={handleAddToCart}
-        ></Bottle>
-      ))}
+    <div>
+      <h5>Cart: {cart.length}</h5>
+      <div className="bottles-container">
+        {bottle.map((bottle) => (
+          <Bottle
+            bottle={bottle}
+            key={bottle.id}
+            handleAddToCart={handleAddToCart}
+          ></Bottle>
+        ))}
+      </div>
     </div>
   );
 };
