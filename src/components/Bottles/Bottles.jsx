@@ -46,7 +46,7 @@ const Bottles = ({ bottlesPromise }) => {
     setCart(updateCart);
 
     // ! LS 1.8 This portion is from localStorage
-    //? Note: We know to get the data from child component we have to set the function on it's parents though the button is in child component so to set the bottle id in localStorage call addToStoreCart function from localStorage.jsx in eventHandler and the bottle id in localStorage.
+    //? Note: We know to get the data from child component we have to set the function on it's parents though the button is in child component so to set the bottle id in localStorage call addToStoreCart function from localStorage.jsx in eventHandler and pass the bottle id as a parameter to save it in localStorage.
     addToStoreCart(bottle.id);
   };
 
