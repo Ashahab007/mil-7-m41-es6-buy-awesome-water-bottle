@@ -11,7 +11,7 @@ const Cart = ({ cart, removeItemFromCart }) => {
           <img src={bottle.img} />
           <button
             onClick={() => {
-              removeItemFromCart(bottle.id);
+              removeItemFromCart(bottle.id); // 4.2 এখানে id টা parameter এ pass করা হয়েছে।
             }}
           >
             x

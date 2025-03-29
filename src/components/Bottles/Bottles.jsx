@@ -53,6 +53,7 @@ const Bottles = ({ bottlesPromise }) => {
   /* 4.1 Remove item from the cart 
   Note: যেকোনো item add or remove করতে গেলে যেখানে state সেখানে set করতে হয়। */
   const removeItemFromCart = (id) => {
+    // 4.3 id টা parameter হিসেবে receive করছে।
     const remainingItems = cart.filter((bottle) => bottle.id !== id);
     console.log(remainingItems);
     setCart(remainingItems);
