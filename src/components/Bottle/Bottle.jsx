@@ -12,7 +12,7 @@ const Bottle = ({ bottle, handleAddToCart }) => {
       <p>{stock} remaining</p>
       <button
         onClick={() => {
-          handleAddToCart(bottle);
+          handleAddToCart(bottle); //এখানে handleAddToCart() এ bottle টা parameter হিসেবে পাঠানো হয়েছে <Bottles></Bottles> component এ।
         }}
       >
         Buy Now
