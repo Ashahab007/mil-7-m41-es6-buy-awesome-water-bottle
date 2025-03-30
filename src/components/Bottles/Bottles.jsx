@@ -13,6 +13,17 @@ const Bottles = ({ bottlesPromise }) => {
 
   console.log(bottles);
 
+  const handleAddToCart = (bottle) => {
+    // এখানে প্রথমে handleAddToCart parameter ছাড়া create করা হয়েছে তারপর নিছে <Bottle></Bottle> props এ পাঠানো হয়েছে। এরপর <Bottle></Bottle> props এর event handler থেকে parameter bottle টা receive করছে।
+    console.log("Bottle added", bottle);
+    const updateCart = [...cart, bottle];
+    setCart(updateCart);
+
+    // ! LS 1.8 This portion is from localStorage
+    //? Note: We know to get the data from child component we have to set the function on it's parents though the button is in child component so to set the bottle id in localStorage call addToStoreCart function from localStorage.jsx in eventHandler and pass the bottle id as a parameter to save it in localStorage.
+    addToStoreCart(bottle.id);
+  };
+
   //? Note: এখানে আগের LS ধাপ গুলাতে browser reload দেওয়ার পরেও  localStorage data গুলা থেকে যাবে। কিন্তু UI তে তা থাকতেছেনা। browser reload দেওয়ার পরেও localStorage এর data গুলো নিয়ে UI তে show করার জন্য useEffect() ব্যাবহার করা হয়েছে। useEffect() সাধারনত বাইরের data নিয়ে কাজ করে i.e data fetch from server, data fetch from localStorage। useEffect একটা callback function এবং একটা dependencies parameter নেয়।
 
   useEffect(() => {
@@ -39,17 +50,6 @@ const Bottles = ({ bottlesPromise }) => {
     setCart(storedCart);
   }, [bottles]);
 
-  const handleAddToCart = (bottle) => {
-    // এখানে প্রথমে handleAddToCart parameter ছাড়া create করা হয়েছে তারপর নিছে <Bottle></Bottle> props এ পাঠানো হয়েছে। এরপর <Bottle></Bottle> props এর event handler থেকে parameter bottle টা receive করছে।
-    console.log("Bottle added", bottle);
-    const updateCart = [...cart, bottle];
-    setCart(updateCart);
-
-    // ! LS 1.8 This portion is from localStorage
-    //? Note: We know to get the data from child component we have to set the function on it's parents though the button is in child component so to set the bottle id in localStorage call addToStoreCart function from localStorage.jsx in eventHandler and pass the bottle id as a parameter to save it in localStorage.
-    addToStoreCart(bottle.id);
-  };
-
   /* 4.1 Remove item from the cart 
   Note: যেকোনো item add or remove করতে গেলে যেখানে state সেখানে set করতে হয়। */
   const removeItemFromCart = (id) => {
@@ -61,6 +61,7 @@ const Bottles = ({ bottlesPromise }) => {
 
   return (
     <div>
+      <h4>Total Bottles: {bottles.length}</h4>
       <h5>Cart: {cart.length}</h5>
       {/*ShowDataWithPicsInUi 3.1 Create a cart component then pass the  destructured cart from bottles as props  */}
       <Cart cart={cart} removeItemFromCart={removeItemFromCart}></Cart>

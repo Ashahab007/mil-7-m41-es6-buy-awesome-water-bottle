@@ -7,7 +7,7 @@ const Cart = ({ cart, removeItemFromCart }) => {
   return (
     <div className="cart-container">
       {cart.map((bottle) => (
-        <div>
+        <div key={bottle.id}>
           <img src={bottle.img} />
           <button
             onClick={() => {
