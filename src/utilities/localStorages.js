@@ -29,7 +29,16 @@ const setCartToLocalStorage = (cart) => {
   localStorage.setItem("cart", cartStrigify);
 };
 
+// 4.4 যেহেতু cart এর bottle গুলা UI থেকে remove হয় কিন্তু localStorage থেকে remove হয় না। localStorage থেকে remove করতে গেলে আলাদা ভাবে localStorage থেকে তা remove করতে হবে।
+
+const removeCartFromLocalStorage = (id) => {
+  const storedId = getCartFromLocalStorage();
+  const remainingCart = storedId.filter((storedId) => storedId !== id);
+  setCartToLocalStorage(remainingCart);
+};
+
 export {
   getCartFromLocalStorage as getStoredCart,
   addItemToCartLocalStorage as addToStoreCart,
+  removeCartFromLocalStorage as removeStoreCart,
 };

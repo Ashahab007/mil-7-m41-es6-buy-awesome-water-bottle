@@ -4,7 +4,11 @@ import Cart from "../Cart/Cart";
 import "./Bottles.css";
 
 // ! LS 1.7 importing addToStoreCart from localStorage
-import { addToStoreCart, getStoredCart } from "../../utilities/localStorages";
+import {
+  addToStoreCart,
+  getStoredCart,
+  removeStoreCart,
+} from "../../utilities/localStorages";
 
 const Bottles = ({ bottlesPromise }) => {
   const bottles = use(bottlesPromise);
@@ -57,6 +61,9 @@ const Bottles = ({ bottlesPromise }) => {
     const remainingItems = cart.filter((bottle) => bottle.id !== id);
     console.log(remainingItems);
     setCart(remainingItems);
+
+    // 4.5 removing items from local storage by onclick event
+    removeStoreCart(id);
   };
 
   return (
